@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="GRS2ROC" tilewidth="40" tileheight="40">
+  <image source="../../../../Desktop/2D Circle Graphic/GRS2ROC.bmp" width="640" height="480"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="193" name="CLIFFVEG" tilewidth="40" tileheight="40">
+  <image source="../../../../Desktop/2D Circle Graphic/CLIFFVEG.bmp" trans="4b637f" width="640" height="480"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="385" name="FENCE" tilewidth="40" tileheight="40">
+  <image source="../../../../Desktop/2D Circle Graphic/FENCE.bmp" trans="4b637f" width="640" height="480"/>
+ </tileset>
+ <tileset firstgid="577" name="ENCINT" tilewidth="40" tileheight="40">
+  <image source="../../../../Desktop/2D Circle Graphic/ENCINT.GIF" trans="4b637f" width="640" height="480"/>
+ </tileset>
+ <tileset firstgid="769" name="BENCH" tilewidth="40" tileheight="40">
+  <image source="../../../../Desktop/2D Circle Graphic/BENCH.GIF" trans="4b637f" width="640" height="480"/>
+  <tile id="188">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3UyS5ecRzH4ZNzKSIupJHegVJ28npV2bXmdqWK0pWplJ2ZnaEttaJmq6IDduZ2S0s3fSxcgOScVyJn8Wy/n/zzS/5ZQRBkZ1gOD8jNsIdJN+km3aSbdJPuPevmhUHwiHwKeEwhRWF83ZTtEtKU8oQynlJORRh995nN51RSRTU11FJHPS94GUbbbbD3ikZe00QzLbyhlTbeRtxtt9dBJ110844eenlPH/0Rd68N2BxkiGFGGGWMcSZiuO+kzSmmmeEDH/nELHN8Zj7i9y7YW+QLSyyzwiprrLPBZsTdr/a22GaHb3znBz/ZZY/9GO57YPOQI4454ZQzfvE7hvveOLd9wR/+cskV/2L8r27rLrvFpDIszX8hmqTqEA4AAA==
+  </data>
+ </layer>
+ <layer name="foreground" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2TzwoBURSH75g3GMRYYsGWJJb+JJYk8SDW3sA7kcRGkcTGO7Bi5Td1bt00c01NZyjzq697brfON90zV4go/5a0KWaWKUQcJIBthuMtwJuFKwfyoOjiXYAlWBFrwqk3YMv0bXtwAEfiRDj1GVwC9J5q7tcyMAeQdOGB82cAry43cBfhe1tf9Kr3nFJWG2QMHq9uvpzeEvqWQRVUCFnXQJ3J20DfJuiANiHrLugxefvoOwAjMCRkPQYTJu8vZRfT77mcVzBXcPacbul0C6fby+n3PIq/fJof53y9euv+OS43t1N1v7/fKP+ZF/eNH0EQDgAA
+  </data>
+ </layer>
+ <layer name="top" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3NsRGAMBDEwPPb0H+NYCgAMDFXgOMn0c4olgQAAPCfrUi76+5wZ8n5Xv7c7nHDvUnfCKm65ha3Rs4XAGY+njv5XxAOAAA=
+  </data>
+ </layer>
+ <layer name="collision" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQEAAACCIP+vbkhAAQAA8Gh7blyXEA4AAA==
+  </data>
+ </layer>
+</map>

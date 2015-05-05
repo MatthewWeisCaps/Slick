@@ -33,6 +33,14 @@ public class Level extends TiledMap {
 			System.err.println("WARNING: Tile width != height.");
 		}
 		
+		fetchAndStoreLevelData();
+	}
+	
+	/*
+	 * Finds any relevant map data and stores it in it's correct location.
+	 * ex: find all blockers in level and add them to blockers ArrayList.
+	 */
+	private void fetchAndStoreLevelData(){
 //		blocked = new boolean[super.getWidth()][super.getHeight()];
 		for (int x=0; x < super.getWidth(); x++){
 			for (int y=0; y < super.getHeight(); y++){

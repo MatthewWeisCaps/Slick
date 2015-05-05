@@ -26,9 +26,4 @@
    H4sIAAAAAAAAA+3ZQQqAIBCF4e7gGVq3cdEtAqH7XyUEAxGdcWE5xf/BI4rAlyktcotdbnYBTLVm2YtzC2KPoxL69flTv1XJqD5lWv1itmzs1r1hcL/aGFK0Zxm5HqQxzpTa2PHojfd7a/5CivZe7/u0fqPXnxTfuF6uw6f2r9S7Z5/Mos2NpW8yAAAAAAAAgO+w/A84drsAnzWzTUAfAAA=
   </data>
  </layer>
- <objectgroup name="collision" width="40" height="50">
-  <object x="322" y="353" width="61" height="62"/>
-  <object x="353" y="449" width="30" height="28"/>
-  <object x="577" y="354" width="31" height="34"/>
- </objectgroup>
 </map>

@@ -32,7 +32,6 @@ public class Camera {
 		return isVisible(mob.getX(), mob.getY());
 	}
 	
-	
 	// getX and getY return camera's bot-left coord
 	public float getX() {
 		return mob.getCenterX()-Game.WIDTH/2;

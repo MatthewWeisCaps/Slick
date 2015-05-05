@@ -8,6 +8,7 @@ import org.newdawn.slick.geom.Rectangle;
 public abstract class Mob extends Entity {
 	
 	private float speed = 0.15f;
+	private final float ONE_OVER_SQRT_2 = (float) (1/Math.sqrt(2));
 	
 	// all mobs are rectangles..
 	public Mob(Rectangle shape, Level level) {
@@ -18,34 +19,39 @@ public abstract class Mob extends Entity {
 	public Mob(float x, float y, float width, float height, Level level){
 		this(new Rectangle(x, y, width, height), level);
 	}
-	
-	
-	protected final void move(float x, float y){
-		move(x, y, false);
-	}
-	
-	private final void move(float x, float y, boolean calculatedSpeed){
-		if (x == 0.0f && y == 0.0f){
+		
+	// guarentee's mob moves same dist (w/ respect to delta) per call.
+	// NOT WORKING?
+	protected final void move(int xdir, int ydir, int delta){
+		assert(xdir == -1 || xdir == 0 || xdir == 1);
+		assert(ydir == -1 || ydir == 0 || ydir == 1);
+		if (xdir == 0 && ydir == 0){
 			return;
 		}
 		
-		if (!calculatedSpeed){
-			x *= speed;
-			y *= speed;
+		final float dist = speed * delta;
+		float nx = 0.0f;
+		float ny = 0.0f;
+		
+		// if moving bidirectionally
+		if (xdir != 0 && ydir != 0){
+			nx = ONE_OVER_SQRT_2 * dist * xdir;
+			ny = ONE_OVER_SQRT_2 * dist * ydir;
+		} else if (xdir != 0) { // if moving left/right
+			nx = dist * xdir;
+		} else if (ydir != 0) { // if moving up/down
+			ny = dist * ydir;
 		}
-		
-		if (x != 0.0f && y != 0.0f){
-			move(x, 0, true);
-			move(0, y, true);
-			return;
-		}
-		
-		
-		final float nx = getX() + x, ny = getY() + y; // next x, next y
-		
+				
+		nx += getX();
+		ny += getY();
 		// if the path in front of you isn't blocked OR you're already ontop of a blocked block..
 		if (!getLevel().isBlocked(new Rectangle(nx, ny, getWidth(), getHeight())) || getLevel().isBlocked(new Rectangle(getX(), getY(), getWidth(), getHeight()))){
 			this.setLocation(nx, ny); // move player, setPosition will force mob into level's bounds.
+		} else if (!getLevel().isBlocked(new Rectangle(nx, getY(), getWidth(), getHeight()))){
+			move(xdir, 0, delta); // y dir is blocked but x isn't. move x.
+		} else if (!getLevel().isBlocked(new Rectangle(getX(), ny, getWidth(), getHeight()))){
+			move(0, ydir, delta); // x dir is blocked but y isn't. move y.
 		}
 	}
 	

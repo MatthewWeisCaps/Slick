@@ -50,29 +50,31 @@ public class Player extends Mob {
 		final boolean left = input.isKeyDown(Input.KEY_LEFT) || input.isKeyDown(Input.KEY_A);
 		final boolean right = input.isKeyDown(Input.KEY_RIGHT) || input.isKeyDown(Input.KEY_D);
 		
-		float dx = 0.0f, dy = 0.0f; // delta x and y
+		int dx = 0, dy = 0; // delta x and y
 		
 		if (up & !down) {
 		    sprite.setAnimation("up");
 		    sprite.update(delta);
-		    dy = -1.0f;
+		    dy = -1;
 		} else if (down & !up) {
 			sprite.setAnimation("down");
 		    sprite.update(delta);
-			dy = 1.0f;
+			dy = 1;
 		}
 		
 		if (left & !right) {
 			sprite.setAnimation("left");
 		    sprite.update(delta);
-		   	dx = -1.0f;
+		   	dx = -1;
 		} else if (right & !left) {
 			sprite.setAnimation("right");
 		    sprite.update(delta);
-			dx = 1.0f;
+			dx = 1;
 		}
 		
-		move(dx * delta, dy * delta);
+//		move(dx * delta, dy * delta);
+		move(dx, dy, delta);
+		
 		
 	}	
 }

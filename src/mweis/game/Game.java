@@ -23,13 +23,19 @@ public class Game extends BasicGame {
 	private Camera camera;
 	private Player player;
 	
+	// level transparent: 75, 99, 127, (255 opacity) =s 4B637F
+	// not working: maybe tilesheets must be png?
 	private Game(String title){
 		super(title);
 	}
 	
 	@Override
 	public void init(GameContainer container) throws SlickException {
-		level = new Level("res/testmap.tmx");
+		try {
+			level = new Level("res/testmap.tmx");
+		} catch (SlickException e){
+			e.printStackTrace();
+		}
 		player = new Player(0*level.getTileWidth(), 0*level.getTileHeight(), level);
 		camera = new Camera(player);
 	}
